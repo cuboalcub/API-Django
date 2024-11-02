@@ -14,14 +14,13 @@ def login(request):
         username = data["username"]
         password = data["password"]
         user = User.objects.get(username=username)
-
         # Verifica la contraseña
         if user.check_password(password):
             # Genera el token de acceso y refresco
             refresh = RefreshToken.for_user(user)
             access_token = str(refresh.access_token)
             refresh_token = str(refresh)
-
+            print(access_token)
             # Retorna el token en la respuesta
             return JsonResponse({
                 'access': access_token,

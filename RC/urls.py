@@ -1,8 +1,10 @@
 from django.urls import path
-from . import views
-
+from .View import newproject
+from .View import viewprojects
+from .View import viewall
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('add', newproject.Actividad),
+     path('view', viewprojects.obtener_actividades)
 ]
 
 

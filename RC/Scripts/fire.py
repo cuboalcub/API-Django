@@ -4,7 +4,7 @@ import firebase_admin
 from firebase_admin import credentials, storage
 
 # Ruta al archivo JSON descargado desde Firebase Console
-cred = credentials.Certificate("/home/abisai/Escritorio/escuela/adm/RCP/RDP/RC/Scripts/key.json")
+cred = credentials.Certificate("/home/abisai/Escritorio/escuela/adm/RCP/key.json")
 
 # Inicializar Firebase
 firebase_admin.initialize_app(cred, {

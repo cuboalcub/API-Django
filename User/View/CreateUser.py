@@ -4,7 +4,6 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 from django.views.decorators.csrf import csrf_exempt
-from django.views.decorators.http import require_http_methods
 
 
 @csrf_exempt
@@ -14,8 +13,8 @@ def create_user(request):
         try:
             data = json.loads(request.body)
             username = data["username"]
-            password = data["password"]
             email = data["email"]
+            password = data["password"]
             user = User.objects.create_user(username=username, password=password, email=email)
             return HttpResponse(status=201)
         except Exception as e:

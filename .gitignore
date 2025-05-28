@@ -1,3 +1,5 @@
 .vscode/
 .venv/
 __pycache__/
+__init__.py
+RC/Scripts/key.json
